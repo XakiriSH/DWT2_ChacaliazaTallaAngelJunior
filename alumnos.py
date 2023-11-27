@@ -1,6 +1,6 @@
 import pickle
 
-class alumnos:
+class Alumno:
     def __init__(self, nombre, apellido, edad, nota, nacionalidad):
         self.nombre = nombre
         self.apellido = apellido

@@ -1,4 +1,4 @@
-from alumnos import alumnos, guardar_alumnos, cargar_alumnos
+from alumnos import Alumno, guardar_alumnos, cargar_alumnos
 
 def registrar_alumnos():
     nombre = input("Ingrese el nombre del alumno: ")
@@ -6,14 +6,14 @@ def registrar_alumnos():
     edad = int(input("Ingrese la edad del alumno: "))
     nacionalidad = input("Ingrese la nacionalidad del alumno: ")
 
-    return alumnos(nombre, apellido, edad, 0, nacionalidad)
+    return Alumno(nombre, apellido, edad, 0, nacionalidad)
 
 def main():
 
     alumnos = cargar_alumnos("alumnos.pkl")
 
     while True:
-        lista_alumnos = []
+        #lista_alumnos = []
         print("*******************************")
         print("Bienvenido al registro de notas")
         print("*******************************")
@@ -27,11 +27,19 @@ def main():
         opcion = input("Seleccione una opcion: ")
 
         if opcion == 'R':
-            alum = registrar_alumnos()
-            lista_alumnos.append(alum)
+            alumno_nuevo = registrar_alumnos()
+            alumnos.append(alumno_nuevo)
+            print("Alumno registrado correctamente")
             
         elif opcion =='C':
-            pass
+            for alumno in alumnos:
+                nota_valida = False
+                while not nota_valida:
+                    try:
+                        nota = int(input(f"Ingrese nota para {alumno.nombre} {alumno.apellido}: "))
+                        nota_valida = alum.registrarNota(nota)
+                    except ValueError:
+                        print("Ingrese un número valido para la nota")
 
         elif opcion == 'P':
             pass
