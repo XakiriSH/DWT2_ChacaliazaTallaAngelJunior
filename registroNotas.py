@@ -46,7 +46,8 @@ def main():
             print(f"El promedio de notas de todos los alumnos es: {promedio:.2f}")
 
         elif opcion == 'S':
-            pass
+            suma_notas = sum(alumno.leerNota() for alumno in alumnos)
+            print(f"LA suma de notas de {len(alumnos)} alumnos es: {suma_notas}") 
 
         elif opcion == 'X':
             print("Saliendo del prorgrama")
