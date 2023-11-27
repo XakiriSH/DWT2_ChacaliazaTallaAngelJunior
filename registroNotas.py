@@ -37,12 +37,13 @@ def main():
                 while not nota_valida:
                     try:
                         nota = int(input(f"Ingrese nota para {alumno.nombre} {alumno.apellido}: "))
-                        nota_valida = alum.registrarNota(nota)
+                        nota_valida = alumno.registrarNota(nota)
                     except ValueError:
                         print("Ingrese un número valido para la nota")
 
         elif opcion == 'P':
-            pass
+            promedio = sum(alumno.leerNota() for alumno in alumnos) / len(alumnos)
+            print(f"El promedio de notas de todos los alumnos es: {promedio:.2f}")
 
         elif opcion == 'S':
             pass
