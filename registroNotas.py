@@ -1,6 +1,17 @@
-import alumnos
+from alumnos import alumnos, guardar_alumnos, cargar_alumnos
+
+def registrar_alumnos():
+    nombre = input("Ingrese el nombre del alumno: ")
+    apellido = input("Ingrese el apellido del alumno: ")
+    edad = int(input("Ingrese la edad del alumno: "))
+    nacionalidad = input("Ingrese la nacionalidad del alumno: ")
+
+    return alumnos(nombre, apellido, edad, 0, nacionalidad)
 
 def main():
+
+    alumnos = cargar_alumnos("alumnos.pkl")
+
     while True:
         lista_alumnos = []
         print("*******************************")
@@ -16,12 +27,7 @@ def main():
         opcion = input("Seleccione una opcion: ")
 
         if opcion == 'R':
-            nombre = input("Ingrese el nombre del alumno: ")
-            apellido = input("Ingrese el apellido del alumno: ")
-            edad = int(input("Ingrese la edad del alumno: "))
-            nacionalidad = input("Ingrese la nacionalidad del alumno: ")
-
-            alum = alumnos(nombre, apellido, edad,nota, nacionalidad)
+            alum = registrar_alumnos()
             lista_alumnos.append(alum)
             
         elif opcion =='C':
