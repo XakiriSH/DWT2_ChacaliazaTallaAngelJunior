@@ -11,7 +11,7 @@ def registrar_alumnos():
 def main():
 
     alumnos = cargar_alumnos("alumnos.pkl")
-
+    
     while True:
         #lista_alumnos = []
         print("*******************************")
@@ -47,9 +47,10 @@ def main():
 
         elif opcion == 'S':
             suma_notas = sum(alumno.leerNota() for alumno in alumnos)
-            print(f"LA suma de notas de {len(alumnos)} alumnos es: {suma_notas}") 
+            print(f"La suma de notas de {len(alumnos)} alumnos es: {suma_notas}") 
 
         elif opcion == 'X':
+            guardar_alumnos(alumnos, 'alumnos.pkl')
             print("Saliendo del prorgrama")
             break
 
