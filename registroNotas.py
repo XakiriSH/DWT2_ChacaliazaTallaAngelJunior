@@ -1,5 +1,8 @@
+import alumnos
+
 def main():
     while True:
+        lista_alumnos = []
         print("*******************************")
         print("Bienvenido al registro de notas")
         print("*******************************")
@@ -13,8 +16,14 @@ def main():
         opcion = input("Seleccione una opcion: ")
 
         if opcion == 'R':
-            pass
+            nombre = input("Ingrese el nombre del alumno: ")
+            apellido = input("Ingrese el apellido del alumno: ")
+            edad = int(input("Ingrese la edad del alumno: "))
+            nacionalidad = input("Ingrese la nacionalidad del alumno: ")
 
+            alum = alumnos(nombre, apellido, edad,nota, nacionalidad)
+            lista_alumnos.append(alum)
+            
         elif opcion =='C':
             pass
 
@@ -25,7 +34,8 @@ def main():
             pass
 
         elif opcion == 'X':
-            pass
+            print("Saliendo del prorgrama")
+            break
 
         else:
             print("Opcion no valida")
